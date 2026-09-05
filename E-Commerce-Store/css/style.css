@@ -1,3 +1,5 @@
+/* Main Theme */
+
 :root {
   /* Main Theme
        Do not edit unless necessary. */
@@ -76,14 +78,21 @@ a {
 /* Header */
 
 .site-header {
-  position: absolute;
+  position: sticky;
 
   top: 0;
   left: 0;
 
   width: 100%;
 
-  z-index: 10;
+  z-index: 1000;
+
+  background: rgba(248, 248, 246, 0.92);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--color-border);
 }
 
 .navbar {
