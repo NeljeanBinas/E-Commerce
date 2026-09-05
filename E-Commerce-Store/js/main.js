@@ -1,0 +1,1 @@
+console.log("Atelier Noir storefront initialized.");
