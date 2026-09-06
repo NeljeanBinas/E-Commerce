@@ -43,8 +43,6 @@
 
 /* Sale Banner */
 
-/* Sale Banner */
-
 .sale-banner {
   width: 100%;
   max-width: var(--container-width);
@@ -206,57 +204,6 @@
   background: var(--color-text);
 }
 
-/* Sort */
-
-.shop-sort {
-  display: flex;
-  align-items: center;
-
-  gap: 10px;
-
-  flex-shrink: 0;
-}
-
-.shop-sort label {
-  color: var(--color-text-muted);
-
-  font-size: 0.65rem;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.shop-sort select {
-  min-width: 150px;
-
-  padding: 8px 28px 8px 0;
-
-  border: 0;
-  border-bottom: 1px solid var(--color-border);
-
-  background-color: transparent;
-
-  color: var(--color-text);
-
-  font: inherit;
-  font-size: 0.65rem;
-
-  letter-spacing: 0.05em;
-
-  cursor: pointer;
-
-  outline: none;
-
-  transition:
-    border-color var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.shop-sort select:hover,
-.shop-sort select:focus {
-  border-color: var(--color-text);
-}
-
 /* Results Header */
 
 .shop-results-header {
@@ -360,28 +307,7 @@
   border-color: var(--color-text);
 }
 
-/* Product Label */
-
-.product-label {
-  position: absolute;
-
-  top: 16px;
-  left: 16px;
-
-  z-index: 2;
-
-  padding: 7px 10px;
-
-  background: var(--color-text);
-
-  color: var(--color-background);
-
-  font-size: 0.55rem;
-  font-weight: 500;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+/* Product Labels________MOved into the style.css for All-pagres use */
 
 /* Quick Add */
 
@@ -501,7 +427,6 @@
 
 .category-link:focus-visible,
 .shop-product-link:focus-visible,
-.shop-sort select:focus-visible,
 .quick-add:focus-visible,
 .back-to-top:focus-visible {
   outline: 2px solid var(--color-accent);
@@ -660,6 +585,7 @@
   position: relative;
 
   width: 100%;
+
   height: 520px;
 
   overflow: hidden;
@@ -943,21 +869,36 @@
   }
 
   .category-navigation {
-    gap: 1.25rem;
-  }
-
-  .shop-sort {
     width: 100%;
 
-    justify-content: space-between;
+    gap: 1.25rem;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 8px 0 12px;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior-x: contain;
+
+    scroll-snap-type: x proximity;
   }
 
-  .shop-sort select {
-    min-width: 0;
+  .category-navigation::-webkit-scrollbar {
+    display: none;
+  }
 
-    flex: 1;
+  .category-link {
+    flex: 0 0 auto;
 
-    max-width: 220px;
+    white-space: nowrap;
+
+    scroll-snap-align: start;
   }
 
   .shop-results-header {
@@ -1071,25 +1012,13 @@
   }
 
   .category-navigation {
-    gap: 1rem 1.2rem;
+    gap: 1rem;
+
+    padding-bottom: 12px;
   }
 
   .category-link {
     font-size: 0.6rem;
-  }
-
-  .shop-sort {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    gap: 8px;
-  }
-
-  .shop-sort select {
-    width: 100%;
-
-    max-width: none;
   }
 
   .shop-results-header h2 {
@@ -1169,9 +1098,13 @@
   .shop-product-image,
   .quick-add,
   .category-link,
-  .shop-sort select,
   .back-to-top,
   .sale-banner-mark {
     transition: none;
+  }
+
+  .category-navigation {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
   }
 }

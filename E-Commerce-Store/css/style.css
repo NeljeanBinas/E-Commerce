@@ -5,9 +5,11 @@
        Do not edit unless necessary. */
 
   --color-background: #f8f8f6;
+
   --color-surface: #ffffff;
 
   --color-text: #111111;
+
   --color-text-muted: #777777;
 
   --color-border: #e5e5e5;
@@ -33,6 +35,7 @@
        Tutorial / implementation to be reviewed later. */
 
   --transition-fast: 180ms ease;
+
   --transition-normal: 300ms ease;
 }
 
@@ -52,6 +55,7 @@ body {
   min-height: 100vh;
 
   background: var(--color-background);
+
   color: var(--color-text);
 
   font-family: var(--font-body);
@@ -61,6 +65,7 @@ body {
 
 img {
   display: block;
+
   max-width: 100%;
 }
 
@@ -90,6 +95,7 @@ a {
   background: rgba(248, 248, 246, 0.92);
 
   backdrop-filter: blur(12px);
+
   -webkit-backdrop-filter: blur(12px);
 
   border-bottom: 1px solid var(--color-border);
@@ -97,6 +103,7 @@ a {
 
 .navbar {
   width: 100%;
+
   max-width: var(--container-width);
 
   margin: 0 auto;
@@ -106,6 +113,7 @@ a {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 }
 
@@ -222,6 +230,7 @@ a {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 15px 24px;
@@ -265,6 +274,7 @@ a {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   animation: heroVisualIn 1100ms ease both;
@@ -282,6 +292,7 @@ a {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   color: var(--color-accent);
@@ -345,6 +356,7 @@ a {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   color: var(--color-accent);
@@ -376,6 +388,7 @@ a {
   display: flex;
 
   align-items: baseline;
+
   justify-content: space-between;
 
   gap: 20px;
@@ -397,6 +410,116 @@ a {
   color: var(--color-text-muted);
 
   font-size: 0.75rem;
+}
+
+/* Product Labels */
+
+.product-label {
+  position: absolute;
+
+  top: 1rem;
+  left: 1rem;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0.45rem 0.7rem;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  font-size: 0.65rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal);
+}
+
+/* Label Hover */
+
+.product-label:hover {
+  background: #ffffff;
+
+  color: #111111;
+}
+
+/* Standard Labels */
+
+.product-label[data-label-type="new"],
+.product-label[data-label-type="sale"],
+.product-label[data-label-type="discount"],
+.product-label[data-label-type="featured"],
+.product-label[data-label-type="sold-out"] {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+/* Standard Label Hover */
+
+.product-label[data-label-type="new"]:hover,
+.product-label[data-label-type="sale"]:hover,
+.product-label[data-label-type="discount"]:hover,
+.product-label[data-label-type="featured"]:hover,
+.product-label[data-label-type="sold-out"]:hover {
+  background: #ffffff;
+
+  color: #111111;
+}
+
+/* Special Labels */
+
+.product-label[data-label-type="limited"],
+.product-label[data-label-type="holiday"],
+.product-label[data-label-type="holiday-sale"],
+.product-label[data-label-type="holiday-exclusive"] {
+  background: linear-gradient(
+    110deg,
+    #8a6a2f 0%,
+    #c6a75e 28%,
+    #f0d98a 50%,
+    #c6a75e 72%,
+    #8a6a2f 100%
+  );
+
+  background-size: 220% 100%;
+
+  color: #ffffff;
+
+  isolation: isolate;
+
+  animation: metallicLabelShimmer 4.5s ease-in-out infinite;
+}
+
+/* Special Label Hover */
+
+.product-label[data-label-type="limited"]:hover,
+.product-label[data-label-type="holiday"]:hover,
+.product-label[data-label-type="holiday-sale"]:hover,
+.product-label[data-label-type="holiday-exclusive"]:hover {
+  background: #ffffff;
+
+  color: #111111;
+
+  animation: none;
 }
 
 /* Editorial */
@@ -425,6 +548,7 @@ a {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 }
 
@@ -440,6 +564,7 @@ a {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   color: var(--color-accent);
@@ -509,6 +634,7 @@ a {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   transition:
@@ -614,6 +740,18 @@ button:focus-visible {
   }
 }
 
+@keyframes metallicLabelShimmer {
+  0%,
+  35% {
+    background-position: 120% 0;
+  }
+
+  55%,
+  100% {
+    background-position: -20% 0;
+  }
+}
+
 /* Footer */
 
 .site-footer {
@@ -688,6 +826,7 @@ button:focus-visible {
     gap: 1.5rem;
 
     overflow-x: auto;
+
     overflow-y: hidden;
 
     padding-bottom: 2px;
@@ -785,11 +924,13 @@ button:focus-visible {
 
   .featured {
     padding-top: 70px;
+
     padding-bottom: 70px;
   }
 
   .editorial {
     padding-top: 70px;
+
     padding-bottom: 70px;
   }
 
@@ -799,7 +940,16 @@ button:focus-visible {
 
   .collections {
     padding-top: 70px;
+
     padding-bottom: 70px;
+  }
+
+  .product-label {
+    padding: 0.4rem 0.6rem;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.1em;
   }
 }
 
