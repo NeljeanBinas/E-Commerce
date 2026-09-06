@@ -21,18 +21,43 @@
       <nav class="navbar" aria-label="Main navigation">
         <a href="index.html" class="logo">[Shop Name Pending]</a>
 
-        <div class="nav-links">
-          <a href="./E-Commerce-Store/pages/shop.html">Shop</a>
-          <a href="./E-Commerce-Store/pages/collections.html">Collections</a>
-          <a href="./E-Commerce-Store/pages/about.html">About</a>
-        </div>
+        <form
+          class="header-search"
+          action="./E-Commerce-Store/pages/search.html"
+          method="GET"
+          role="search"
+        >
+          <input
+            type="search"
+            name="q"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16L21 21"></path>
+            </svg>
+          </button>
+        </form>
 
         <div class="nav-actions">
-          <a href="pages/search.html">Search</a>
-          <a href="pages/account.html">Account</a>
+          <a href="./E-Commerce-Store/pages/account.html"> Account </a>
 
-          <a href="pages/cart.html"> Cart (<span id="cart-count">0</span>) </a>
+          <a href="./E-Commerce-Store/pages/cart.html">
+            Bag (<span id="cart-count">0</span>)
+          </a>
         </div>
+      </nav>
+
+      <nav class="nav-ribbon" aria-label="Store navigation">
+        <a href="./E-Commerce-Store/pages/shop.html">Shop</a>
+        <a href="./E-Commerce-Store/pages/collections.html">Collections</a>
+        <a href="./E-Commerce-Store/pages/about.html">About</a>
+        <a href="./E-Commerce-Store/pages/shop.html">New Arrivals</a>
+        <a href="./E-Commerce-Store/pages/shop.html">Dresses</a>
+        <a href="./E-Commerce-Store/pages/shop.html">Tops</a>
       </nav>
     </header>
 
@@ -52,7 +77,9 @@
             A collection shaped by elegance, confidence, and timeless design.
           </p>
 
-          <a href="pages/shop.html" class="button"> Discover the Collection </a>
+          <a href="./E-Commerce-Store/pages/shop.html" class="button">
+            Discover the Collection
+          </a>
         </div>
 
         <div class="hero-visual">
@@ -147,7 +174,9 @@
             created for the modern woman.
           </p>
 
-          <a href="pages/about.html" class="button"> Discover Our Story </a>
+          <a href="./E-Commerce-Store/pages/about.html" class="button">
+            Discover Our Story
+          </a>
         </div>
       </section>
 

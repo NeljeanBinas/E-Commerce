@@ -21,20 +21,43 @@
 
     <header class="site-header">
       <nav class="navbar" aria-label="Main navigation">
-        <a href="../index.html" class="logo">[Shop Name Pending]</a>
+        <a href="../../index.html" class="logo">[Shop Name Pending]</a>
 
-        <div class="nav-links">
-          <a href="shop.html" class="active">Shop</a>
-          <a href="collections.html">Collections</a>
-          <a href="about.html">About</a>
-        </div>
+        <form
+          class="header-search"
+          action="search.html"
+          method="GET"
+          role="search"
+        >
+          <input
+            type="search"
+            name="q"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16L21 21"></path>
+            </svg>
+          </button>
+        </form>
 
         <div class="nav-actions">
-          <a href="search.html">Search</a>
           <a href="account.html">Account</a>
 
-          <a href="cart.html"> Cart (<span id="cart-count">0</span>) </a>
+          <a href="cart.html"> Bag (<span id="cart-count">0</span>) </a>
         </div>
+      </nav>
+
+      <nav class="nav-ribbon" aria-label="Store navigation">
+        <a href="shop.html" class="active">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">New Arrivals</a>
+        <a href="shop.html">Dresses</a>
+        <a href="shop.html">Tops</a>
       </nav>
     </header>
 
