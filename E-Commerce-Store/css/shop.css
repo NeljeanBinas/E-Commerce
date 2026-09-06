@@ -65,10 +65,14 @@
 
   gap: 32px;
   width: 100%;
+
+  min-width: 0;
 }
 
 .sale-banner-text {
   min-width: 0;
+
+  flex: 1 1 auto;
 }
 
 .sale-banner .eyebrow {
@@ -83,7 +87,8 @@
   font-weight: 500;
   letter-spacing: -0.03em;
 
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .sale-banner-description {
@@ -94,6 +99,8 @@
   color: var(--color-text-muted);
   font-size: 0.8rem;
   line-height: 1.5;
+
+  overflow-wrap: anywhere;
 }
 
 .sale-banner .button {
@@ -890,6 +897,14 @@
 
     gap: 50px 20px;
   }
+
+  .sale-banner-content {
+    gap: 24px;
+  }
+
+  .sale-banner-mark {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
 }
 
 /* Mobile */
@@ -978,14 +993,38 @@
   }
 
   .sale-banner {
-    padding: 50px 6vw;
+    padding: 40px 6vw;
+  }
+
+  .sale-banner-content {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 24px;
+  }
+
+  .sale-banner-text {
+    width: 100%;
   }
 
   .sale-banner h2 {
+    max-width: 100%;
+
     font-size: clamp(2rem, 8vw, 3.5rem);
   }
 
+  .sale-banner-description {
+    max-width: 100%;
+  }
+
+  .sale-banner .button {
+    width: 100%;
+  }
+
   .sale-banner-mark {
+    position: absolute;
+
     right: -5px;
 
     bottom: -25px;
@@ -1093,7 +1132,13 @@
   }
 
   .sale-banner {
-    padding: 45px 6vw;
+    padding: 35px 6vw;
+  }
+
+  .sale-banner h2 {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+
+    line-height: 1;
   }
 
   .sale-banner-description {
